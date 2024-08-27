@@ -21,23 +21,24 @@ public class Response implements ServletResponse {
         FileInputStream fis = null;
         try {
             File file = new File(Constants.WEB_ROOT, request.getUri());
-            if (file.exists()) {
-                fis = new FileInputStream(file);
-                int ch = fis.read(buffer, 0, BUFFER_SIZE);
-                while (ch != -1) {
-                    outputStream.write(buffer, 0, ch);
-                    ch = fis.read(buffer, ch, BUFFER_SIZE);
-                }
-            } else {
-                String errorMessage = "HTTP/1.1 404 File Not Found\r\n"
-                        + "Content-Type: text/html\r\n"
-                        + "Content-length: 23\r\n"
-                        + "\r\n"
-                        + "<h1>File Not Found</h1>";
-                outputStream.write(errorMessage.getBytes());
+            String message = "HTTP/1.1 200 OK\r\n"
+                    + "Content-Type: text/html\r\n"
+                    + "Content-length: 200\r\n"
+                    + "\r\n";
+            outputStream.write(message.getBytes());
+            fis = new FileInputStream(file);
+            int ch = fis.read(buffer, 0, BUFFER_SIZE);
+            while (ch != -1) {
+                outputStream.write(buffer, 0, ch);
+                ch = fis.read(buffer, 0, BUFFER_SIZE);
             }
         } catch (Exception e) {
-            System.out.println(e);
+            String errorMessage = "HTTP/1.1 404 File Not Found\r\n"
+                    + "Content-Type: text/html\r\n"
+                    + "Content-length: 23\r\n"
+                    + "\r\n"
+                    + "<h1>File Not Found</h1>";
+            outputStream.write(errorMessage.getBytes());
         } finally {
             if (fis != null) {
                 fis.close();

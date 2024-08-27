@@ -1,9 +1,9 @@
-import ex02.HttpServer1;
+import ex02.HttpServer2;
 
 public class Test {
 
     public static void main(String[] args) {
-        HttpServer1 httpServer1 = new HttpServer1();
-        httpServer1.await();
+        HttpServer2 server = new HttpServer2();
+        server.await();
     }
 }

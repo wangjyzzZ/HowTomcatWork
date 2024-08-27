@@ -11,11 +11,6 @@ public class HttpServer1 {
 
     private boolean shutdown = false;
 
-    public static void main(String[] args) {
-        HttpServer1 httpServer = new HttpServer1();
-        httpServer.await();
-    }
-
     public void await() {
         ServerSocket serverSocket = null;
         int port = 8080;
