@@ -1,9 +1,9 @@
-import ex02.HttpServer2;
+import ex03.startup.Bootstrap;
 
 public class Test {
 
     public static void main(String[] args) {
-        HttpServer2 server = new HttpServer2();
-        server.await();
+        Bootstrap bootstrap = new Bootstrap();
+        bootstrap.start();
     }
 }
