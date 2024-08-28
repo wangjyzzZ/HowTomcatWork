@@ -1,9 +1,9 @@
-import ex04.startup.Bootstrap;
+import ex05.startup.Bootstrap2;
 
 public class Test {
 
     public static void main(String[] args) {
-        Bootstrap bootstrap = new Bootstrap();
-        bootstrap.start();
+        Bootstrap2 bootstrap2 = new Bootstrap2();
+        bootstrap2.start();
     }
 }
