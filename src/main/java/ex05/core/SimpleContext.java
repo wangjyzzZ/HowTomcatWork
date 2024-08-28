@@ -171,16 +171,6 @@ public class SimpleContext implements Context, Pipeline {
     }
 
     @Override
-    public NamingResources getNamingResources() {
-        return null;
-    }
-
-    @Override
-    public void setNamingResources(NamingResources namingResources) {
-
-    }
-
-    @Override
     public String getPath() {
         return null;
     }
@@ -322,11 +312,6 @@ public class SimpleContext implements Context, Pipeline {
 
     @Override
     public void addResourceEnvRef(String s, String s1) {
-
-    }
-
-    @Override
-    public void addResourceLink(ContextResourceLink contextResourceLink) {
 
     }
 
@@ -488,16 +473,6 @@ public class SimpleContext implements Context, Pipeline {
     }
 
     @Override
-    public ContextResourceLink findResourceLink(String s) {
-        return null;
-    }
-
-    @Override
-    public ContextResourceLink[] findResourceLinks() {
-        return new ContextResourceLink[0];
-    }
-
-    @Override
     public ContextResource[] findResources() {
         return new ContextResource[0];
     }
@@ -641,11 +616,6 @@ public class SimpleContext implements Context, Pipeline {
 
     @Override
     public void removeResourceEnvRef(String s) {
-
-    }
-
-    @Override
-    public void removeResourceLink(String s) {
 
     }
 
@@ -817,11 +787,6 @@ public class SimpleContext implements Context, Pipeline {
             Container results[] = new Container[children.size()];
             return (Container[]) children.values().toArray(results);
         }
-    }
-
-    @Override
-    public ContainerListener[] findContainerListeners() {
-        return new ContainerListener[0];
     }
 
     @Override

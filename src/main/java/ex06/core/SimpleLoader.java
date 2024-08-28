@@ -103,11 +103,6 @@ public class SimpleLoader implements Loader, Lifecycle {
     }
 
     @Override
-    public LifecycleListener[] findLifecycleListeners() {
-        return new LifecycleListener[0];
-    }
-
-    @Override
     public void removeLifecycleListener(LifecycleListener lifecycleListener) {
 
     }

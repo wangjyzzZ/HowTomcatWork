@@ -63,11 +63,6 @@ public class SimplePipeline implements Pipeline, Lifecycle {
     }
 
     @Override
-    public LifecycleListener[] findLifecycleListeners() {
-        return new LifecycleListener[0];
-    }
-
-    @Override
     public void removeLifecycleListener(LifecycleListener lifecycleListener) {
 
     }

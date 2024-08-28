@@ -133,11 +133,6 @@ public class SimpleContainer implements Container {
     }
 
     @Override
-    public ContainerListener[] findContainerListeners() {
-        return null;
-    }
-
-    @Override
     public Mapper findMapper(String protocol) {
         return null;
     }

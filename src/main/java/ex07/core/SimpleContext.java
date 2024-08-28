@@ -80,11 +80,6 @@ public class SimpleContext implements Context, Pipeline, Lifecycle {
     }
 
     @Override
-    public LifecycleListener[] findLifecycleListeners() {
-        return new LifecycleListener[0];
-    }
-
-    @Override
     public void removeLifecycleListener(LifecycleListener lifecycleListener) {
         lifecycleSupport.removeLifecycleListener(lifecycleListener);
     }
@@ -94,7 +89,6 @@ public class SimpleContext implements Context, Pipeline, Lifecycle {
         if (started) {
             throw new LifecycleException("SimpleContext has already started");
         }
-        lifecycleSupport.fireLifecycleEvent(BEFORE_START_EVENT, null);
         started = true;
         try {
             if (loader != null && loader instanceof  Lifecycle) {
@@ -117,7 +111,6 @@ public class SimpleContext implements Context, Pipeline, Lifecycle {
             e.printStackTrace();
         }
 
-        lifecycleSupport.fireLifecycleEvent(AFTER_START_EVENT, null);
     }
 
     @Override
@@ -125,7 +118,6 @@ public class SimpleContext implements Context, Pipeline, Lifecycle {
         if (!started) {
             throw new LifecycleException("SimpleContext has not been started");
         }
-        lifecycleSupport.fireLifecycleEvent(BEFORE_STOP_EVENT, null);
         lifecycleSupport.fireLifecycleEvent(STOP_EVENT, null);
         started = false;
         try {
@@ -148,8 +140,6 @@ public class SimpleContext implements Context, Pipeline, Lifecycle {
         catch (Exception e) {
             e.printStackTrace();
         }
-        // Notify our interested LifecycleListeners
-        lifecycleSupport.fireLifecycleEvent(AFTER_STOP_EVENT, null);
     }
 
     @Override
@@ -249,16 +239,6 @@ public class SimpleContext implements Context, Pipeline, Lifecycle {
 
     @Override
     public void setLoginConfig(LoginConfig loginConfig) {
-
-    }
-
-    @Override
-    public NamingResources getNamingResources() {
-        return null;
-    }
-
-    @Override
-    public void setNamingResources(NamingResources namingResources) {
 
     }
 
@@ -404,11 +384,6 @@ public class SimpleContext implements Context, Pipeline, Lifecycle {
 
     @Override
     public void addResourceEnvRef(String s, String s1) {
-
-    }
-
-    @Override
-    public void addResourceLink(ContextResourceLink contextResourceLink) {
 
     }
 
@@ -570,16 +545,6 @@ public class SimpleContext implements Context, Pipeline, Lifecycle {
     }
 
     @Override
-    public ContextResourceLink findResourceLink(String s) {
-        return null;
-    }
-
-    @Override
-    public ContextResourceLink[] findResourceLinks() {
-        return new ContextResourceLink[0];
-    }
-
-    @Override
     public ContextResource[] findResources() {
         return new ContextResource[0];
     }
@@ -723,11 +688,6 @@ public class SimpleContext implements Context, Pipeline, Lifecycle {
 
     @Override
     public void removeResourceEnvRef(String s) {
-
-    }
-
-    @Override
-    public void removeResourceLink(String s) {
 
     }
 
@@ -899,11 +859,6 @@ public class SimpleContext implements Context, Pipeline, Lifecycle {
             Container results[] = new Container[children.size()];
             return (Container[]) children.values().toArray(results);
         }
-    }
-
-    @Override
-    public ContainerListener[] findContainerListeners() {
-        return new ContainerListener[0];
     }
 
     @Override

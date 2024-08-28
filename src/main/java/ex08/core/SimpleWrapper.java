@@ -100,11 +100,6 @@ public class SimpleWrapper implements Wrapper, Pipeline, Lifecycle {
     }
 
     @Override
-    public LifecycleListener[] findLifecycleListeners() {
-        return new LifecycleListener[0];
-    }
-
-    @Override
     public void removeLifecycleListener(LifecycleListener lifecycleListener) {
 
     }
@@ -115,9 +110,6 @@ public class SimpleWrapper implements Wrapper, Pipeline, Lifecycle {
         if (started) {
             throw new LifecycleException("Wrapper already started");
         }
-
-        // Notify our interested LifecycleListeners
-        lifecycleSupport.fireLifecycleEvent(BEFORE_START_EVENT, null);
         started = true;
 
         // Start our subordinate components, if any
@@ -132,8 +124,6 @@ public class SimpleWrapper implements Wrapper, Pipeline, Lifecycle {
 
         // Notify our interested LifecycleListeners
         lifecycleSupport.fireLifecycleEvent(START_EVENT, null);
-        // Notify our interested LifecycleListeners
-        lifecycleSupport.fireLifecycleEvent(AFTER_START_EVENT, null);
     }
 
     @Override
@@ -148,8 +138,6 @@ public class SimpleWrapper implements Wrapper, Pipeline, Lifecycle {
         if (!started) {
             throw new LifecycleException("Wrapper " + name + " not started");
         }
-        // Notify our interested LifecycleListeners
-        lifecycleSupport.fireLifecycleEvent(BEFORE_STOP_EVENT, null);
 
         // Notify our interested LifecycleListeners
         lifecycleSupport.fireLifecycleEvent(STOP_EVENT, null);
@@ -165,8 +153,6 @@ public class SimpleWrapper implements Wrapper, Pipeline, Lifecycle {
             ((Lifecycle) loader).stop();
         }
 
-        // Notify our interested LifecycleListeners
-        lifecycleSupport.fireLifecycleEvent(AFTER_STOP_EVENT, null);
     }
 
     @Override
@@ -437,11 +423,6 @@ public class SimpleWrapper implements Wrapper, Pipeline, Lifecycle {
     @Override
     public Container[] findChildren() {
         return new Container[0];
-    }
-
-    @Override
-    public ContainerListener[] findContainerListeners() {
-        return new ContainerListener[0];
     }
 
     @Override

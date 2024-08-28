@@ -7,7 +7,6 @@ import org.apache.catalina.connector.http.HttpConnector;
 import org.apache.catalina.core.StandardContext;
 import org.apache.catalina.loader.WebappClassLoader;
 import org.apache.catalina.loader.WebappLoader;
-import org.apache.naming.resources.ProxyDirContext;
 
 public class Bootstrap {
 
@@ -51,7 +50,6 @@ public class Bootstrap {
             ((Lifecycle) context).start();
             // now we want to know some details about WebappLoader
             WebappClassLoader classLoader = (WebappClassLoader) loader.getClassLoader();
-            System.out.println("Resources' docBase: " + ((ProxyDirContext)classLoader.getResources()).getDocBase());
             String[] repositories = classLoader.findRepositories();
             for (int i=0; i<repositories.length; i++) {
                 System.out.println("  repository: " + repositories[i]);
