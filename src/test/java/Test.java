@@ -1,4 +1,4 @@
-import ex03.startup.Bootstrap;
+import ex04.startup.Bootstrap;
 
 public class Test {
 
