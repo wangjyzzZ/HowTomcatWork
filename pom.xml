@@ -24,5 +24,17 @@
             <artifactId>catalina</artifactId>
             <version>4.0.6</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.directory.studio/org.apache.commons.collections -->
+        <dependency>
+            <groupId>org.apache.directory.studio</groupId>
+            <artifactId>org.apache.commons.collections</artifactId>
+            <version>3.2.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/commons-digester/commons-digester -->
+        <dependency>
+            <groupId>commons-digester</groupId>
+            <artifactId>commons-digester</artifactId>
+            <version>1.2</version>
+        </dependency>
     </dependencies>
 </project>
