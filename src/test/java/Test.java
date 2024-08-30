@@ -1,9 +1,10 @@
-import ex09.startup.Bootstrap;
+
+import ex10.startup.Bootstrap2;
 
 public class Test {
 
     public static void main(String[] args) {
-        Bootstrap bootstrap = new Bootstrap();
+        Bootstrap2 bootstrap = new Bootstrap2();
         bootstrap.start();
     }
 }

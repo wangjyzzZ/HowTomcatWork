@@ -1,4 +1,4 @@
-package webroot;
+package webroot.myApp;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
